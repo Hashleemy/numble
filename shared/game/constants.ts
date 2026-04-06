@@ -1,0 +1,9 @@
+export const MIN_NUMBER = 1;
+export const MAX_NUMBER = 9;
+export const NUMBER_COUNT = 6;
+export const MIN_TARGET = 1;
+export const MAX_TARGET = 100;
+export const ROUND_TIME_SECONDS = 30;
+export const POINTS_PER_SOLVE = 10;
+export const TIME_BONUS_MULTIPLIER = 0.5;
+export const OPERATORS = ['+', '-', '*', '/'] as const;

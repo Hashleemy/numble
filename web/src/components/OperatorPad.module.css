@@ -1,0 +1,32 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  padding: 14px 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-alt);
+  color: var(--text-sub);
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s, color 0.12s, transform 0.1s, box-shadow 0.12s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface-alt));
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn:not(:disabled):active {
+  transform: scale(0.93);
+  box-shadow: none;
+}

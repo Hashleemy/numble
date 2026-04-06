@@ -1,0 +1,109 @@
+@keyframes float {
+  0%, 100% { transform: translateY(0)   rotate(0deg);   opacity: 0.12; }
+  50%       { transform: translateY(-12px) rotate(8deg); opacity: 0.22; }
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse at 25% 45%, rgba(59, 130, 246, 0.28) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 25%, rgba(99, 102, 241, 0.22) 0%, transparent 55%),
+    linear-gradient(160deg, #0a0e27 0%, #0d1b4b 35%, #1565c0 72%, #1e88e5 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* floating symbols */
+.symbols { position: absolute; inset: 0; pointer-events: none; }
+
+.symbol {
+  position: absolute;
+  color: #ffffff;
+  opacity: 0.12;
+  font-weight: 700;
+  animation: float 6s ease-in-out infinite;
+  user-select: none;
+}
+
+/* nav */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.navRight { display: flex; gap: 10px; align-items: center; }
+
+.navBtn {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 0.15s;
+}
+.navBtn:hover { background: rgba(255,255,255,0.2); }
+
+/* hero */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 40px 24px 80px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.75);
+  margin: 0;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+.playBtn {
+  padding: 18px 56px;
+  font-size: 1.2rem;
+  font-weight: 800;
+  border: none;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #0d1b4b;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 2px 8px rgba(0,0,0,0.2);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.playBtn:hover  { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,0,0,0.35); }
+.playBtn:active { transform: translateY(0); }
+
+.saveNote {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+}
+
+.inlineLink {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.8);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: inherit;
+  padding: 0;
+}
+.inlineLink:hover { color: #ffffff; }

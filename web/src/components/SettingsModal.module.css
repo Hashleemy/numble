@@ -1,0 +1,97 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+
+.panel {
+  background: var(--surface);
+  border-radius: 16px;
+  padding: 28px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header { display: flex; justify-content: space-between; align-items: center; }
+
+.title { font-size: 1.25rem; font-weight: 700; color: var(--text); margin: 0; }
+
+.close {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+.close:hover { background: var(--surface-alt); }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.section { display: flex; flex-direction: column; gap: 10px; }
+
+.label { font-size: 0.95rem; font-weight: 500; color: var(--text); }
+
+/* Toggle switch */
+.toggle {
+  width: 48px;
+  height: 26px;
+  border-radius: 13px;
+  border: none;
+  background: var(--border);
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.toggle.on { background: #22c55e; }
+
+.thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+.toggle.on .thumb { transform: translateX(22px); }
+
+/* Difficulty buttons */
+.diffGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+
+.diffBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 4px;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.diffBtn:hover { border-color: var(--text-muted); }
+.diffBtn.active { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+
+.diffLabel { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+.diffSecs  { font-size: 0.75rem; color: var(--text-muted); }

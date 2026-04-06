@@ -1,0 +1,37 @@
+@keyframes urgentPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+.container { display: flex; align-items: center; gap: 10px; width: 100%; }
+
+.track {
+  flex: 1;
+  height: 10px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4caf50, #8bc34a);
+  border-radius: 6px;
+  transition: width 0.9s linear, background 0.3s;
+}
+
+.bar.urgent {
+  background: linear-gradient(90deg, #f44336, #ff7043);
+  animation: urgentPulse 0.75s ease-in-out infinite;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-sub);
+  min-width: 28px;
+  text-align: right;
+}
+
+.urgentLabel { color: var(--urgent); }
