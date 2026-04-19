@@ -34,4 +34,4 @@ export const DARK = {
   urgent:      '#f85149',
 } as const;
 
-export type Theme = typeof LIGHT;
+export type Theme = Record<keyof typeof LIGHT, string>;
