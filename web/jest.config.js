@@ -9,7 +9,7 @@ module.exports = {
     '^@numble/shared/(.*)$': '<rootDir>/../shared/game/$1',
     '\\.(css|scss)$': '<rootDir>/src/__mocks__/fileMock.js',
   },
-  setupFilesAfterFramework: ['@testing-library/jest-dom'],
+  setupFilesAfterEnv: ['@testing-library/jest-dom'],
   transform: {
     '^.+\\.tsx?$': ['ts-jest', {
       tsconfig: {

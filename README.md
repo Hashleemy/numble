@@ -2,7 +2,7 @@
 
 # 🔢 Numble
 
-**A fast-paced arithmetic puzzle game — can you hit the target in 30 seconds?**
+**A fast-paced arithmetic puzzle game — can you hit the target in 45 seconds?**
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-19-61dafb?style=flat-square&logo=react&logoColor=black)](https://react.dev/)
@@ -80,11 +80,7 @@ npm install
 
 ### 4. Configure environment variables
 
-```bash
-cp web/.env.example web/.env
-```
-
-Open `web/.env` and fill in your values:
+Create `web/.env` manually:
 
 ```env
 VITE_SUPABASE_URL=https://your-project-ref.supabase.co
@@ -118,16 +114,15 @@ numble/
 │
 ├── web/                     # React web application
 │   ├── public/
-│   ├── src/
-│   │   ├── components/      # Reusable UI components
-│   │   ├── features/        # Composite feature components (GameBoard)
-│   │   ├── hooks/           # Custom React hooks
-│   │   ├── lib/             # Supabase client & utilities
-│   │   ├── pages/           # Route-level page components
-│   │   ├── store/           # Zustand state stores
-│   │   ├── types/           # Shared TypeScript types
-│   │   └── utils/           # Pure utility functions
-│   └── .env.example
+│   └── src/
+│       ├── components/      # Reusable UI components
+│       ├── features/        # Composite feature components (GameBoard)
+│       ├── hooks/           # Custom React hooks
+│       ├── lib/             # Supabase client & utilities
+│       ├── pages/           # Route-level page components
+│       ├── store/           # Zustand state stores
+│       ├── types/           # Shared TypeScript types
+│       └── utils/           # Pure utility functions
 │
 ├── supabase/
 │   └── schema.sql           # Database schema, RLS policies, triggers
