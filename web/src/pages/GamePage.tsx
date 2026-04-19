@@ -31,7 +31,10 @@ export function GamePage() {
   useEffect(() => {
     if (gameStatus === 'solved' || gameStatus === 'failed') {
       const solved = gameStatus === 'solved';
-      if (soundEnabled) solved ? playWin() : playLose();
+      if (soundEnabled) {
+        if (solved) playWin();
+        else playLose();
+      }
       // On failure, streak has already been reset to 0 in the store.
       // Use sessionMaxStreak so longest_streak is still updated correctly.
       const streakToSave = solved ? streak : sessionMaxStreak;

@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import type { User } from '@supabase/supabase-js';
 import { supabase, type Profile, type GameSession } from '../lib/supabase';
+import { useSettingsStore } from './settingsStore';
 
 interface SessionPayload {
   total_score:   number;
@@ -69,12 +70,19 @@ export const useAuthStore = create<AuthStore>((set, get) => ({
 
     const { data: { session } } = await supabase.auth.getSession();
     set({ user: session?.user ?? null, loading: false });
-    if (session?.user) await get().loadProfile();
+    if (session?.user) {
+      await get().loadProfile();
+      await useSettingsStore.getState().loadSettings(session.user.id);
+    }
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, s) => {
       set({ user: s?.user ?? null });
-      if (s?.user) get().loadProfile();
-      else set({ profile: null });
+      if (s?.user) {
+        get().loadProfile();
+        void useSettingsStore.getState().loadSettings(s.user.id);
+      } else {
+        set({ profile: null });
+      }
     });
 
     _authSubUnsub = subscription.unsubscribe.bind(subscription);

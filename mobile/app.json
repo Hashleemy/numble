@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "Numble",
+    "slug": "numble",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "numble",
+    "platforms": ["ios", "android"],
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#1a1a2e"
+      }
+    }
+  }
+}
