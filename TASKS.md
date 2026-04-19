@@ -6,7 +6,7 @@
 
 ## Web — Deploy
 
-- [ ] Push repo to GitHub (remove `web/memory.txt.txt` and `claude.md.txt` first)
+- [x] Push repo to GitHub (remove `web/memory.txt.txt` and `claude.md.txt` first)
 - [ ] Import project at vercel.com → set Root Directory to `web`
 - [ ] Add environment variables in Vercel: `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY`
 - [ ] Smoke-test the deployed URL: sign up → confirm email → sign in → play session → check stats
@@ -31,9 +31,9 @@
 
 ---
 
-## Web — Feature Gap
+## Web — Feature Gap ✅ Done (commit 305074d)
 
-- [ ] Decide: implement settings sync to Supabase `user_settings` table, or remove the table from schema and the `UserSettings` interface from `web/src/lib/supabase.ts`
+- [x] Settings sync implemented: `settingsStore` upserts to `user_settings` on every change; `authStore` calls `loadSettings` on sign-in and auth state change
 
 ---
 
