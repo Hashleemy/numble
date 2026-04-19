@@ -37,17 +37,19 @@
 
 ---
 
-## Mobile — Setup (required before first run)
+## Mobile — Setup ✅ Done (commit 981fdac)
 
-- [ ] Fill real Supabase keys into `mobile/.env`:
-  - `EXPO_PUBLIC_SUPABASE_URL=https://tkmzjpcfdqeuckrzcbnw.supabase.co`
-  - `EXPO_PUBLIC_SUPABASE_ANON_KEY=<real anon key>`
-- [ ] Run `npm install` inside the `mobile/` directory (Expo requires separate install — not hoisted by root workspace)
-- [ ] Run `npx expo start` from `mobile/` and test on a device or emulator
+- [x] Fill real Supabase keys into `mobile/.env` (keys were already present, matching web)
+- [x] Run `npm install` inside the `mobile/` directory — 909 packages installed
+- [x] Fix TS error in `useTheme.ts`: `Theme` type changed to `Record<keyof typeof LIGHT, string>`
+- [x] Downgrade `@react-native-async-storage/async-storage` 2.1.2 → 1.23.1 (Expo 52 expected version)
+- [x] Verified `npx expo start` boots Metro Bundler with no errors or warnings
 
 ---
 
-## Mobile — Testing
+## Mobile — Testing (requires device or emulator)
+
+> Run `npx expo start` from `mobile/`, then scan QR with Expo Go app or open in Android/iOS emulator.
 
 - [ ] Test Landing screen: play button, settings modal, stats modal (logged in), login nav
 - [ ] Test Login screen: sign in, sign up, password strength meter, lockout after 5 failed attempts
