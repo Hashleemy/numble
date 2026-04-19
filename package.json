@@ -3,12 +3,11 @@
   "private": true,
   "workspaces": [
     "shared",
-    "web",
-    "mobile"
+    "web"
   ],
   "scripts": {
     "dev": "npm run dev -w web",
-    "dev:mobile": "npm run start -w mobile",
+    "dev:mobile": "npm --prefix mobile run start",
     "test": "npm run test --workspaces --if-present",
     "test:shared": "npm run test -w shared",
     "test:web": "npm run test -w web",
